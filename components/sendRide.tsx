@@ -5,20 +5,18 @@ import Colors from "../constants/Colors";
 import { MonoText } from "./StyledText";
 import { Text, View } from "./Themed";
 
-export default function EditScreenInfo({ path }: { path: string }) {
+interface Ride {
+  userId: string;
+  turnRound: boolean;
+}
+
+export default function SendRide(ride: Ride) {
   return (
     <View>
       <View style={styles.getStartedContainer}>
         <Text style={styles.getStartedText} lightColor="rgba(0,0,0,0.8)">
           Open up the code for this screen:
         </Text>
-        <View
-          style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
-          darkColor="rgba(255,255,255,0.05)"
-          lightColor="rgba(0,0,0,0.05)"
-        >
-          <MonoText>{path}</MonoText>
-        </View>
 
         <Text
           style={styles.getStartedText}
